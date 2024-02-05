@@ -21,9 +21,11 @@ PRODUCT_PACKAGES += \
     FrameworksResMondrianGlobal \
     NfcResMondrian \
     SettingsProviderResMondrian \
+    SettingsProviderResMondrianCN \
     SettingsResMondrian \
     SystemUIResMondrian \
-    WifiResMondrian
+    WifiResMondrian \
+    WifiResMondrianCN
 
 # Sensors
 PRODUCT_PACKAGES += \
