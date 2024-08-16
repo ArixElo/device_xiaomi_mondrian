@@ -17,9 +17,6 @@ function blob_fixup() {
         vendor/etc/init/hw/init.batterysecret.rc)
             sed -i 's/on charger/on property:init.svc.vendor.charger=running/g' "${2}"
             ;;
-       vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)
-            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
-            ;;
     esac
 }
 
