@@ -18,7 +18,16 @@ function blob_fixup() {
             sed -i 's/on charger/on property:init.svc.vendor.charger=running/g' "${2}"
             ;;
        vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)
-            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            "${PATCHELF_0_17_2}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            ;;
+        vendor/lib64/libalNN_snpe.so)
+            "${PATCHELF_0_17_2}" --set-soname "libalNN_snpe.so" "${2}"
+            ;;
+        vendor/lib64/hw/fingerprint.fpc_fod.default.so)
+            "${PATCHELF_0_17_2}" --set-soname "fingerprint.fpc_fod.default.so" "${2}"
+            ;;
+        vendor/lib64/hw/fingerprint.goodix_fod.default.so)
+            "${PATCHELF_0_17_2}" --set-soname "fingerprint.goodix_fod.default.so" "${2}"
             ;;
         vendor/lib64/libcamximageformatutils.so)
             "${PATCHELF_0_17_2}" --replace-needed "vendor.qti.hardware.display.config-V2-ndk_platform.so" "vendor.qti.hardware.display.config-V2-ndk.so" "${2}"
