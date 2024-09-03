@@ -9,9 +9,9 @@ $(call inherit-product, device/xiaomi/mondrian/device.mk)
 
 # Inherit from common lineage configuration
 TARGET_DISABLE_EPPE := true
-$(call inherit-product, vendor/everest/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := everest_mondrian
+PRODUCT_NAME := lineage_mondrian
 PRODUCT_DEVICE := mondrian
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
@@ -31,8 +31,12 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Everest Properties
 EVEREST_MAINTAINER := "ArixElo"
+
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
-TARGET_INCLUDE_PIXEL_LAUNCHER := false
+
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
+
 WITH_GAPPS := true
 TARGET_BOOT_ANIMATION_RES := 1440
